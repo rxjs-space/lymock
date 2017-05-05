@@ -1,9 +1,222 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "titles": {
+    "vehicles": {
+      "id": "车辆识别代号",
+      "mofcomRegistryType": "商务部登记入口类别",
+      "entranceDate": "进场日期",
+      "owner": {
+        "name": "所有人",
+        "addressShort": "短地址",
+        "addressLong": "长地址",
+        "zipCode": "邮编",
+        "idNo": "证件号码",
+        "tel": "联系电话",
+        "isPeople": "是否私家车"
+      },
+      "agent": "",
+      "vehicle": {
+        "plateNo": "号牌号码",
+        "vehicleType": "车辆类型",
+        "useCharacter": "使用性质",
+        "brand": "品牌",
+        "model": "型号",
+        "engineNo": "发动机号码",
+        "registrationDate": "注册日期",
+        "totalMassKG": "总质量(KG)",
+        "lengthOverallMM": "外廓长度(MM)",
+        "color": "车身颜色",
+        "aquisition": {
+          "type": "车辆获得方式",
+          "detail": "车辆获得方式明细"
+        }
+      }
+    }
+  },
+  "vehicles": [
+    {
+      "id": "abcd12345678",
+      "mofcomRegistryType": {
+        "id": 1,
+        "name": "正常"
+      },
+      "entranceDate": "2017-05-03T05:07:44.062Z",
+      "owner": {
+        "isPeople": true,
+        "isRemote": false,
+        "name": "车飞豹",
+        "idNo": "211302200001011230",
+        "tel": "13804210421",
+        "addressShort": "朝阳市",
+        "addressLong": "",
+        "zipCode": "122000"
+      },
+      "agent": {
+        "name": "建永辉",
+        "idNo": "211302200001011231",
+        "tel": "13904210421"
+      },
+      "vehicle": {
+        "plateNo": "辽N12345",
+        "vehicleType": {
+          "id": 1,
+          "name": "小型轿车"
+        },
+        "brand": {
+          "id": 2,
+          "name": "继科"
+        },
+        "model": "xyz123",
+        "useCharacter": {
+          "id": 1,
+          "name": "非营运"
+        },
+        "conditionAtEntrance": "good",
+        "residualValue": 400,
+        "engineNo": "001123",
+        "color": "红/灰",
+        "registrationDate": "2009-05-01",
+        "fuelType": {
+          "id": 1,
+          "name": "汽油"
+        },
+        "aquisition": {
+          "type": {"id": 1, "name": "购买"},
+          "detail": ""
+        },
+        "displacement": 1,
+        "totalMassKG": 1450,
+        "lengthOverallMM": 4500,
+        "seats": 5
+      },
+      "misc": {
+        "isToDeregister": true,
+        "docs": {
+          "vehicleRegistrationCertificate": true,
+          "vehicleLicenseSideA": true,
+          "vehicleLicenseSideB": true,
+          "plateCount": 2,
+          "ownersIdCopy": true
+        }
+      },
+      "dismantling": {
+        "orderId": "n12345",
+        "orderType": {
+          "id": 1,
+          "name": "normal"
+        },
+        "orderDate": "2017-05-03T05:07:44.062Z",
+        "estimatedFinishDate": "2017-05-05T00:00:00.000Z",
+        "actualFinishDate": ""
+      },
+      "deregistration": {
+        "recycleCertFinishedOn": "2017-05-05T16:00:00.000Z",
+        "recycleCertPickedUpOn": ""
+      }
+    },
+    {"id": "xyz"}
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "types": {
+    "mofcomRegistryType": [
+      {
+        "id": 1,
+        "name": "正常"
+      },
+      {
+        "id": 2, "name": "异地"
+      },
+      {
+        "id": 3,
+        "name": "信息不全"
+      },
+      {
+        "id": 4,
+        "name": "罚没"
+      }
+    ],
+    "vehicleTypes": [
+      {
+        "id": 1,
+        "name": "小型轿车"
+      },
+      {
+        "id": 2,
+        "name": "anotherVType"
+      }
+    ],
+    "brands": [
+      {
+        "id": 1,
+        "name": "夏利"
+      },
+      {
+        "id": 2,
+        "name": "继科"
+      }
+    ],
+    "useCharacters": [
+      {
+        "id": 1,
+        "name": "非营运"
+      },
+      {
+        "id": 2,
+        "name": "出租客运"
+      }
+    ],
+    "fuelTypes": [
+      {
+        "id": 1,
+        "name": "汽油"
+      },
+      {
+        "id": 2,
+        "name": "柴油"
+      },
+      {
+        "id": 3,
+        "name": "燃气"
+      },
+      {
+        "id": 4,
+        "name": "其他"
+      }
+    ],
+    "aquisitionTypes": [
+      {
+        "id": 1,
+        "name": "购买"
+      },
+      {
+        "id": 2,
+        "name": "其他"
+      }
+    ],
+    "dismantlingOrderType": [
+      {
+        "id": 1,
+        "name": "normal"
+      },
+      {
+        "id": 2,
+        "name": "adHoc"
+      }
+    ]
+  },
+  "entities": [
+    {
+      "isOrg": false,
+      "isRemote": false,
+      "name": "车飞豹",
+      "idNo": "211302200001011230",
+      "tel": "",
+      "addressShort": "朝阳市",
+      "addressLong": "",
+      "zipCode": "122000"
+    },
+    {
+      "name": "建永辉",
+      "idNo": "211302200001011231",
+      "tel": "13904210421"
+    }
+  ]
 }
