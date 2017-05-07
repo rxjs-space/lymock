@@ -2,18 +2,29 @@
   "titles": {
     "vehicles": {
       "id": "车辆识别代号",
-      "mofcomRegistryType": "商务部登记入口类别",
+      "mofcomRegistryType": "商务部登记类别",
       "entranceDate": "进场日期",
+      "metadata": {
+        "isDeleted": "已删除",
+        "deletedFor": "删除原因"
+      },
       "owner": {
-        "name": "所有人",
-        "addressShort": "短地址",
-        "addressLong": "长地址",
+        "name": "所有人姓名/组织机构名称",
+        "address": "地址",
         "zipCode": "邮编",
+        "idType": "证件类型",
+        "idTypeDetail": "证件类型明细",
         "idNo": "证件号码",
         "tel": "联系电话",
-        "isPeople": "是否私家车"
+        "isPerson": "是否私家车"
       },
-      "agent": "",
+      "agent": {
+        "name": "经办人姓名",
+        "idType": "证件类型",
+        "idTypeDetail": "证件类型明细",
+        "idNo": "证件号码",
+        "tel": "联系电话"
+      },
       "vehicle": {
         "plateNo": "号牌号码",
         "vehicleType": "车辆类型",
@@ -25,10 +36,12 @@
         "totalMassKG": "总质量(KG)",
         "lengthOverallMM": "外廓长度(MM)",
         "color": "车身颜色",
-        "aquisition": {
-          "type": "车辆获得方式",
-          "detail": "车辆获得方式明细"
-        }
+        "aquisitionType": "车辆获得方式",
+        "aquisitionDetail": "车辆获得方式明细",
+        "displacementL": "排量(L)",
+        "fuelType": "燃油种类",
+        "seats": "核定载人数",
+        "isNEV": "是否新能源"
       }
     }
   },
@@ -39,19 +52,24 @@
         "id": 1,
         "name": "正常"
       },
-      "entranceDate": "2017-05-03T05:07:44.062Z",
+      "entranceDate": "2017-05-03",
+      "metadata": {
+        "isDeleted": false,
+        "deletedFor": ""
+      },
       "owner": {
-        "isPeople": true,
+        "isPerson": true,
         "isRemote": false,
         "name": "车飞豹",
+        "idType": {"id": 1, "name": "身份证"},
         "idNo": "211302200001011230",
         "tel": "13804210421",
-        "addressShort": "朝阳市",
-        "addressLong": "",
+        "address": "朝阳市",
         "zipCode": "122000"
       },
       "agent": {
         "name": "建永辉",
+        "idType": {"id": 1, "name": "身份证"},
         "idNo": "211302200001011231",
         "tel": "13904210421"
       },
@@ -70,7 +88,7 @@
           "id": 1,
           "name": "非营运"
         },
-        "conditionAtEntrance": "good",
+        "conditionOnEntrance": "good",
         "residualValue": 400,
         "engineNo": "001123",
         "color": "红/灰",
@@ -79,24 +97,25 @@
           "id": 1,
           "name": "汽油"
         },
-        "aquisition": {
-          "type": {"id": 1, "name": "购买"},
-          "detail": ""
-        },
-        "displacement": 1,
+        "aquisitionType": {"id": 1, "name": "购买"},
+        "aquisitionDetail": "",
+        "displacementL": 1,
         "totalMassKG": 1450,
         "lengthOverallMM": 4500,
-        "seats": 5
+        "seats": 5,
+        "isNEV": false
       },
       "misc": {
-        "isToDeregister": true,
-        "docs": {
-          "vehicleRegistrationCertificate": true,
-          "vehicleLicenseSideA": true,
-          "vehicleLicenseSideB": true,
-          "plateCount": 2,
-          "ownersIdCopy": true
-        }
+        "isToDeregister": true
+      },
+      "docsProvided": {
+        "vehicleRegistrationCertificate": true,
+        "vehicleLicensePartA": true,
+        "vehicleLicensePartB": true,
+        "plateCount": 2,
+        "ownerIdCopy": true,
+        "agentIdCopy": true,
+        "powerOfAtterney": false
       },
       "dismantling": {
         "orderId": "n12345",
@@ -108,7 +127,7 @@
         "estimatedFinishDate": "2017-05-05T00:00:00.000Z",
         "actualFinishDate": ""
       },
-      "deregistration": {
+      "recycleCert": {
         "recycleCertFinishedOn": "2017-05-05T16:00:00.000Z",
         "recycleCertPickedUpOn": ""
       }
@@ -116,7 +135,15 @@
     {"id": "xyz"}
   ],
   "types": {
-    "mofcomRegistryType": [
+    "pIdTypes": [
+      {"id": 1, "name": "身份证"},
+      {"id": 2, "name": "其他"}
+    ],
+    "oIdTypes": [
+      {"id": 1, "name": "组织机构代码证"},
+      {"id": 2, "name": "其他"}
+    ],    
+    "mofcomRegistryTypes": [
       {
         "id": 1,
         "name": "正常"
@@ -140,7 +167,11 @@
       },
       {
         "id": 2,
-        "name": "anotherVType"
+        "name": "轻型厢式货车"
+      },
+      {
+        "id": 3,
+        "name": "二轮摩托车"
       }
     ],
     "brands": [
