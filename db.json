@@ -1,13 +1,13 @@
 {
   "titles": {
+    "metadata": {
+      "isDeleted": "已删除",
+      "deletedFor": "删除原因"
+    },
     "vehicles": {
       "id": "车辆识别代号",
       "mofcomRegistryType": "商务部登记类别",
       "entranceDate": "进场日期",
-      "metadata": {
-        "isDeleted": "已删除",
-        "deletedFor": "删除原因"
-      },
       "owner": {
         "name": "所有人姓名/组织机构名称",
         "address": "地址",
@@ -44,13 +44,24 @@
         "isNEV": "是否新能源"
       },
       "docsProvided": {
-        "vehicleRegistrationCertificate": "机动车登记证书"
+        "vRegistrationCert": "机动车登记证书",
+        "vLicenseA": "机动车行驶证正本",
+        "vLicenseB": "机动车行驶证副本",
+        "plateCount": "车牌数量"
       }
+    },
+    "dismantlingOrders": {
+      "id": "编号",
+      "vin": "车辆识别代号",
+      "orderType": "类别",
+      "orderDate": "计划下达日期",
+      "estimatedFinishDate": "预计完成日期",
+      "actualFinishDate": "实际完成日期"
     }
   },
   "vehicles": [
     {
-      "id": "abcd12345678",
+      "id": "ABCD12345678",
       "mofcomRegistryType": {
         "id": 1,
         "name": "正常"
@@ -112,15 +123,15 @@
         "isToDeregister": true
       },
       "docsProvided": {
-        "vehicleRegistrationCertificate": true,
-        "vehicleLicensePartA": true,
-        "vehicleLicensePartB": true,
+        "vRegistrationCert": true,
+        "vLicenseA": true,
+        "vLicenseB": true,
         "plateCount": 2,
         "ownerIdCopy": true,
         "agentIdCopy": true,
         "powerOfAtterney": false
       },
-      "dismantling": {
+      "latestDismantlingOrder": {
         "orderId": "n12345",
         "orderType": {
           "id": 1,
@@ -225,14 +236,14 @@
         "name": "其他"
       }
     ],
-    "dismantlingOrderType": [
+    "dismantlingOrderTypes": [
       {
         "id": 1,
-        "name": "normal"
+        "name": "正常"
       },
       {
         "id": 2,
-        "name": "adHoc"
+        "name": "临时"
       }
     ]
   },
@@ -252,5 +263,16 @@
       "idNo": "211302200001011231",
       "tel": "13904210421"
     }
-  ]
+  ],
+  "dismantlingOrders": [{
+    "id": "1",
+    "vin": "ABCD12345678",
+    "orderType": {
+      "id": 1,
+      "name": "临时"
+    },
+    "orderDate": "2017-05-03",
+    "estimatedFinishDate": "2017-05-05",
+    "actualFinishDate": "2017-05-10"
+  }]
 }
