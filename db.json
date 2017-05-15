@@ -6,6 +6,7 @@
     },
     "vehicles": {
       "id": "车辆识别代号",
+      "idConfirm": "车辆识别代号确认",
       "mofcomRegistryType": "商务部登记类别",
       "entranceDate": "进场日期",
       "owner": {
