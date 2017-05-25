@@ -64,7 +64,7 @@
     {
       "id": "ABCD12345678",
       "mofcomRegistryType": {
-        "id": 1,
+        "id": "1",
         "name": "正常"
       },
       "entranceDate": "2017-05-03",
@@ -76,7 +76,7 @@
         "isPerson": true,
         "isRemote": false,
         "name": "车飞豹",
-        "idType": {"id": 1, "name": "身份证"},
+        "idType": {"id": "1", "name": "身份证"},
         "idNo": "211302200001011230",
         "tel": "13804210421",
         "address": "朝阳市",
@@ -84,23 +84,23 @@
       },
       "agent": {
         "name": "建永辉",
-        "idType": {"id": 1, "name": "身份证"},
+        "idType": {"id": "1", "name": "身份证"},
         "idNo": "211302200001011231",
         "tel": "13904210421"
       },
       "vehicle": {
         "plateNo": "辽N12345",
         "vehicleType": {
-          "id": 1,
+          "id": "1",
           "name": "小型轿车"
         },
         "brand": {
-          "id": 2,
+          "id": "2",
           "name": "继科"
         },
         "model": "xyz123",
         "useCharacter": {
-          "id": 1,
+          "id": "1",
           "name": "非营运"
         },
         "conditionOnEntrance": "good",
@@ -109,10 +109,10 @@
         "color": "红/灰",
         "registrationDate": "2009-05-01",
         "fuelType": {
-          "id": 1,
+          "id": "1",
           "name": "汽油"
         },
-        "aquisitionType": {"id": 1, "name": "购买"},
+        "aquisitionType": {"id": "1", "name": "购买"},
         "aquisitionDetail": "",
         "displacementL": 1,
         "totalMassKG": 1450,
@@ -120,8 +120,17 @@
         "seats": 5,
         "isNEV": false
       },
+      "feesAndDeductions": [
+        {"type": {"id": "2", "name": "truckingFee"}, "amount": 100},
+        {"type": {"id": "1", "name": "lostBattery"}, "amout": 100},
+        {"type:": {"id": "3", "name": "others"}, "detail": "", "amount": 50}
+      ],
       "misc": {
-        "isToDeregister": true
+        "isToDeregister": true,
+        "policeBranch": {
+          "id": "1", "name": "无"
+        },
+        "remarks": "anything not stated elsewhere."
       },
       "docsProvided": {
         "vRegistrationCert": true,
@@ -135,7 +144,7 @@
       "latestDismantlingOrder": {
         "orderId": "n12345",
         "orderType": {
-          "id": 1,
+          "id": "1",
           "name": "normal"
         },
         "orderDate": "2017-05-03T05:07:44.062Z",
@@ -146,104 +155,103 @@
         "recycleCertFinishedOn": "2017-05-05T16:00:00.000Z",
         "recycleCertPickedUpOn": ""
       }
-    },
-    {"id": "xyz"}
+    }
   ],
   "types": {
     "pIdTypes": [
-      {"id": 1, "name": "身份证"},
-      {"id": 2, "name": "其他"}
+      {"id": "1", "name": "身份证"},
+      {"id": "2", "name": "其他"}
     ],
     "oIdTypes": [
-      {"id": 1, "name": "组织机构代码证"},
-      {"id": 2, "name": "其他"}
+      {"id": "1", "name": "组织机构代码证"},
+      {"id": "2", "name": "其他"}
     ],    
     "mofcomRegistryTypes": [
       {
-        "id": 1,
+        "id": "1",
         "name": "正常"
       },
       {
-        "id": 2, "name": "异地"
+        "id": "2", "name": "异地"
       },
       {
-        "id": 3,
+        "id": "3",
         "name": "信息不全"
       },
       {
-        "id": 4,
+        "id": "4",
         "name": "罚没"
       }
     ],
     "vehicleTypes": [
       {
-        "id": 1,
+        "id": "1",
         "name": "小型轿车"
       },
       {
-        "id": 2,
+        "id": "2",
         "name": "轻型厢式货车"
       },
       {
-        "id": 3,
+        "id": "3",
         "name": "二轮摩托车"
       }
     ],
     "brands": [
       {
-        "id": 1,
+        "id": "1",
         "name": "夏利"
       },
       {
-        "id": 2,
+        "id": "2",
         "name": "继科"
       }
     ],
     "useCharacters": [
       {
-        "id": 1,
+        "id": "1",
         "name": "非营运"
       },
       {
-        "id": 2,
+        "id": "2",
         "name": "出租客运"
       }
     ],
     "fuelTypes": [
       {
-        "id": 1,
+        "id": "1",
         "name": "汽油"
       },
       {
-        "id": 2,
+        "id": "2",
         "name": "柴油"
       },
       {
-        "id": 3,
+        "id": "3",
         "name": "燃气"
       },
       {
-        "id": 4,
+        "id": "4",
         "name": "其他"
       }
     ],
     "aquisitionTypes": [
       {
-        "id": 1,
+        "id": "1",
         "name": "购买"
       },
       {
-        "id": 2,
+        "id": "2",
         "name": "其他"
       }
     ],
     "dismantlingOrderTypes": [
       {
-        "id": 1,
+        "id": "1",
         "name": "正常"
       },
       {
-        "id": 2,
+        "id": "2",
         "name": "临时"
       }
     ]
@@ -251,12 +259,10 @@
   "entities": [
     {
       "isOrg": false,
-      "isRemote": false,
       "name": "车飞豹",
       "idNo": "211302200001011230",
       "tel": "",
-      "addressShort": "朝阳市",
-      "addressLong": "",
+      "address": "朝阳市",
       "zipCode": "122000"
     },
     {
@@ -265,15 +271,27 @@
       "tel": "13904210421"
     }
   ],
+  "users": [{
+    "id": "1",
+    "username": "baoshijie",
+    "password": "123",
+    "groupIds": ["1"]
+  }],
+  "groups": [{
+    "id": "1",
+    "groupname": "admin",
+    "memeberIds": ["1"]
+  }],
   "dismantlingOrders": [{
     "id": "1",
     "vin": "ABCD12345678",
     "orderType": {
-      "id": 1,
+      "id": "1",
       "name": "临时"
     },
     "orderDate": "2017-05-03",
     "estimatedFinishDate": "2017-05-05",
-    "actualFinishDate": "2017-05-10"
+    "actualFinishDate": "2017-05-10",
+    "group": ""
   }]
 }
