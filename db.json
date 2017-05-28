@@ -10,23 +10,27 @@
       "mofcomRegistryType": "商务部登记类别",
       "entranceDate": "进场日期",
       "owner": {
+        "title": "所有人信息",
         "name": "所有人姓名/组织机构名称",
         "address": "地址",
         "zipCode": "邮编",
         "idType": "所有人证件类型",
-        "idTypeDetail": "所有人证件类型明细",
+        "idOtherTypeName": "其他证件名称",
         "idNo": "所有人证件号码",
         "tel": "所有人联系电话",
-        "isPerson": "是否私家车"
+        "isPerson": "是否私家车",
+        "isByAgent": "他人代办"
       },
       "agent": {
+        "title": "经办人信息",
         "name": "经办人姓名",
         "idType": "经办人证件类型",
-        "idTypeDetail": "经办人证件类型明细",
+        "idOtherTypeName": "其他证件名称",
         "idNo": "经办人证件号码",
         "tel": "经办人联系电话"
       },
       "vehicle": {
+        "title": "车辆信息",
         "plateNo": "号牌号码",
         "vehicleType": "车辆类型",
         "useCharacter": "使用性质",
@@ -38,17 +42,42 @@
         "lengthOverallMM": "外廓长度(MM)",
         "color": "车身颜色",
         "aquisitionType": "车辆获得方式",
-        "aquisitionDetail": "车辆获得方式明细",
+        "aquisitionOtherTypeDetail": "车辆获得方式明细",
         "displacementL": "排量(L)",
         "fuelType": "燃油种类",
         "seats": "核定载人数",
-        "isNEV": "是否新能源"
+        "isNEV": "是否新能源",
+        "conditionOnEntrance": "车辆状况",
+        "residualValueBeforeFD": "抵扣前残值（元）",
+        "residualValueAfterFD": "抵扣后残值（元）"
       },
       "docsProvided": {
+        "title": "申请人需要提供的材料",
         "vRegistrationCert": "机动车登记证书",
         "vLicenseA": "机动车行驶证正本",
         "vLicenseB": "机动车行驶证副本",
-        "plateCount": "车牌数量"
+        "infoQueryForm": "交警出具的机动车信息查询表",
+        "plateCount": "车牌数量",
+        "ownerOIdCopy": "机动车所有人（单位）的《组织机构代码证》复印件",
+        "ownerPIdCopy": "机动车所有人（个人）的身份证复印件",
+        "agentIdCopy": "机动车所有人提供的代理人身份证复印件",
+        "registrationTransferDeregistrationApplication": "机动车注册、转移、注销登记/转入申请表",
+        "surveyRecords": "机动车查验记录表",
+        "powerOfAttorney": "委托书（委托办理注销登记）",
+        "orgDeregistrationFormCopy": "工商核准注销通知书复印件（单位已注销）",
+        "orgRenamingDoc": "更名文件（单位已更名）",
+        "statementOfLossOnNewspaper": "登报声明（行驶证、登记证书、车牌丢失需要登报声明）",
+        "ownershipCert": "车辆权属证明",
+        "affiliationAgreement": "车辆挂靠协议",
+        "others": "其他材料"
+      },
+      "feesAndDeductions": {
+        "title": "费用及抵扣",
+        "type": "费抵类别",
+        "id": "费抵编号",
+        "partName": "零件名称",
+        "othersDetails": "详情",
+        "amount": "金额（元）"
       }
     },
     "dismantlingOrders": {
@@ -70,21 +99,24 @@
       "entranceDate": "2017-05-03",
       "metadata": {
         "isDeleted": false,
-        "deletedFor": ""
+        "deletedFor": "车主取消拆解"
       },
       "owner": {
         "isPerson": true,
         "isRemote": false,
         "name": "车飞豹",
         "idType": {"id": "1", "name": "身份证"},
+        "idOtherTypeName": "",
         "idNo": "211302200001011230",
         "tel": "13804210421",
         "address": "朝阳市",
-        "zipCode": "122000"
+        "zipCode": "122000",
+        "isByAgent": true
       },
       "agent": {
         "name": "建永辉",
         "idType": {"id": "1", "name": "身份证"},
+        "idOtherTypeName": "",
         "idNo": "211302200001011231",
         "tel": "13904210421"
       },
@@ -103,8 +135,8 @@
           "id": "1",
           "name": "非营运"
         },
-        "conditionOnEntrance": "good",
-        "residualValue": 400,
+        "conditionOnEntrance": "完好，无氟，少量废油。",
+        "residualValueBeforeFD": 500,
         "engineNo": "001123",
         "color": "红/灰",
         "registrationDate": "2009-05-01",
@@ -113,7 +145,7 @@
           "name": "汽油"
         },
         "aquisitionType": {"id": "1", "name": "购买"},
-        "aquisitionDetail": "",
+        "aquisitionOtherTypeDetail": "",
         "displacementL": 1,
         "totalMassKG": 1450,
         "lengthOverallMM": 4500,
@@ -121,9 +153,15 @@
         "isNEV": false
       },
       "feesAndDeductions": [
-        {"type": {"id": "2", "name": "truckingFee"}, "amount": 100},
-        {"type": {"id": "1", "name": "lostBattery"}, "amout": 100},
-        {"type:": {"id": "3", "name": "others"}, "detail": "", "amount": 50}
+        {"type": {"id": "2", "name": "拖车费"}, 
+          "details": "起点：豪德",
+          "amount": 100},
+        {"type": {"id": "1", "name": "零件遗失"}, 
+          "part": {"id": "1", "name": "电瓶"}, 
+          "amount": 100},
+        {"type": {"id": "3", "name": "其他"}, 
+          "details": "说明抵扣原因", 
+          "amount": 100}
       ],
       "misc": {
         "isToDeregister": true,
@@ -137,9 +175,19 @@
         "vLicenseA": true,
         "vLicenseB": true,
         "plateCount": 2,
-        "ownerIdCopy": true,
+        "infoQueryForm": false,
+        "ownerPIdCopy": true,
+        "ownerOIdCopy": false,
         "agentIdCopy": true,
-        "powerOfAtterney": false
+        "powerOfAttorney": false,
+        "registrationTransferDeregistrationApplication": false,
+        "surveyRecords": false,
+        "orgDeregistrationFormCopy": false,
+        "orgRenamingDoc": false,
+        "statementOfLossOnNewspaper": false,
+        "ownershipCert": false,
+        "affiliationAgreement": false,
+        "others": ""
       },
       "latestDismantlingOrder": {
         "orderId": "n12345",
@@ -158,6 +206,11 @@
     }
   ],
   "types": {
+    "feesAndDeductionsTypes": [
+      {"id": "1", "name": "零件遗失"},
+      {"id": "2", "name": "拖车费"},
+      {"id": "3", "name": "其他"}
+    ],
     "pIdTypes": [
       {"id": "1", "name": "身份证"},
       {"id": "2", "name": "其他"}
