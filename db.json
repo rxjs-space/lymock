@@ -5,10 +5,13 @@
       "deletedFor": "删除原因"
     },
     "vehicles": {
-      "id": "车辆识别代号",
+      "id": "车辆识别代号（VIN）",
       "idConfirm": "车辆识别代号确认",
-      "mofcomRegistryType": "商务部登记类别",
+      "mofcomRegisterType": "商务部登记类别",
+      "mofcomRegisterRef": "商务部登记编号",
       "entranceDate": "进场日期",
+      "batchId": "批次编号",
+      "isToDeregister": "是否办理注销",
       "owner": {
         "title": "所有人信息",
         "name": "所有人姓名/组织机构名称",
@@ -78,26 +81,84 @@
         "partName": "零件名称",
         "othersDetails": "详情",
         "amount": "金额（元）"
+      },
+      "status": {
+        "title": "状态信息",
+        "ownerDocsReady": "车主手续齐全",
+        "platesCollectedByOwner": "车主已提走车牌",
+        "rubbing": "已拓印 VIN",
+        "photosOnEntrance": "已拍整车及 VIN 照片",
+        "photosAfterCuttingUp": "已拍切割照片",
+        "firstSurvey": "已完成一次验车",
+        "secondSurvey": "已完成二次验车",
+        "dismantled": "已彻底拆解",
+        "latestDismantlingOrder": {
+          "title": "最近拆解计划",
+          "type": "类型",
+          "done": "状态"
+        },
+        "latestSurveyOrder": {
+          "title": "最近验车计划",
+          "type": "类型",
+          "done": "状态"
+        },
+        "mofcomEntry": {
+          "title": "已录入商务部系统",
+          "ref": "商务部记录编号"
+        },
+        "mofcomCertReady": "已备齐拆解证明",
+        "mofcomCertCollectedByOwnerAndSigned": "车主已领取拆解证明并签字",
+        "policeSiteEntry": "已录入治安网"
+      },
+      "remarks": {
+        "title": "备注",
+        "id": "备注编号",
+        "date": "备注日期",
+        "by": "被主人",
+        "content": "内容"
       }
     },
     "dismantlingOrders": {
+      "title": "拆解计划",
       "id": "编号",
       "vin": "车辆识别代号",
       "orderType": "类别",
       "orderDate": "计划下达日期",
       "estimatedFinishDate": "预计完成日期",
       "actualFinishDate": "实际完成日期"
+    },
+    "surveyOrders": {
+      "title": "验车计划",
+      "id": "编号",
+      "vin": "车辆识别代号",
+      "orderType": "类别",
+      "orderDate": "计划制定日期",
+      "actualFinishDate": "实际完成日期"
     }
   },
   "vehicles": [
     {
       "id": "ABCD12345678",
-      "mofcomRegistryType": {
+      "isToDeregister": true,
+      "batchId": "",
+      "mofcomRegisterType": {
         "id": "1",
         "name": "正常"
       },
+      "mofcomRegisterRef": "HS-210000-1045-20170601-100",
       "entranceDate": "2017-05-03",
+      "remarks": [
+        {
+          "date": "2017-05-03",
+          "by": "longyun8",
+          "content": "abc"
+        }
+      ],
       "metadata": {
+        "createdAt": "",
+        "createdBy": "",
+        "deletedBy": "",
+        "deletedAt": "",
         "isDeleted": false,
         "deletedFor": "车主取消拆解"
       },
@@ -105,7 +166,10 @@
         "isPerson": true,
         "isRemote": false,
         "name": "车飞豹",
-        "idType": {"id": "1", "name": "身份证"},
+        "idType": {
+          "id": "p1",
+          "name": "身份证"
+        },
         "idOtherTypeName": "",
         "idNo": "211302200001011230",
         "tel": "13804210421",
@@ -115,7 +179,10 @@
       },
       "agent": {
         "name": "建永辉",
-        "idType": {"id": "1", "name": "身份证"},
+        "idType": {
+          "id": "p1",
+          "name": "身份证"
+        },
         "idOtherTypeName": "",
         "idNo": "211302200001011231",
         "tel": "13904210421"
@@ -144,7 +211,10 @@
           "id": "1",
           "name": "汽油"
         },
-        "aquisitionType": {"id": "1", "name": "购买"},
+        "aquisitionType": {
+          "id": "1",
+          "name": "购买"
+        },
         "aquisitionOtherTypeDetail": "",
         "displacementL": 1,
         "totalMassKG": 1450,
@@ -153,23 +223,34 @@
         "isNEV": false
       },
       "feesAndDeductions": [
-        {"type": {"id": "2", "name": "拖车费"}, 
+        {
+          "type": {
+            "id": "2",
+            "name": "拖车费"
+          },
           "details": "起点：豪德",
-          "amount": 100},
-        {"type": {"id": "1", "name": "零件遗失"}, 
-          "part": {"id": "1", "name": "电瓶"}, 
-          "amount": 100},
-        {"type": {"id": "3", "name": "其他"}, 
-          "details": "说明抵扣原因", 
-          "amount": 100}
-      ],
-      "misc": {
-        "isToDeregister": true,
-        "policeBranch": {
-          "id": "1", "name": "无"
+          "amount": 100
         },
-        "remarks": "anything not stated elsewhere."
-      },
+        {
+          "type": {
+            "id": "1",
+            "name": "零件遗失"
+          },
+          "part": {
+            "id": "1",
+            "name": "电瓶"
+          },
+          "amount": 100
+        },
+        {
+          "type": {
+            "id": "3",
+            "name": "其他"
+          },
+          "details": "说明抵扣原因",
+          "amount": 100
+        }
+      ],
       "docsProvided": {
         "vRegistrationCert": true,
         "vLicenseA": true,
@@ -189,51 +270,256 @@
         "affiliationAgreement": false,
         "others": ""
       },
-      "latestDismantlingOrder": {
-        "orderId": "n12345",
-        "orderType": {
-          "id": "1",
-          "name": "normal"
+      "status": {
+        "ownerDocsReady": {
+          "done": true,
+          "date": "2017-05-05"
         },
-        "orderDate": "2017-05-03T05:07:44.062Z",
-        "estimatedFinishDate": "2017-05-05T00:00:00.000Z",
-        "actualFinishDate": ""
-      },
-      "recycleCert": {
-        "recycleCertFinishedOn": "2017-05-05T16:00:00.000Z",
-        "recycleCertPickedUpOn": ""
+        "platesCollectedByOwner": {
+          "done": true,
+          "date": "2017-05-05"
+        },
+        "rubbing": {
+          "done": true,
+          "date": "2017-05-05"
+        },
+        "photosOnEntrance": {
+          "done": true,
+          "date": "2017-05-05"
+        },
+        "photosAfterCuttingUp": {
+          "done": false,
+          "date": "2017-05-05"
+        },
+        "firstSurvey": {
+          "done": true,
+          "date": "2017-05-05"
+        },
+        "secondSurvey": {
+          "done": false,
+          "date": ""
+        },
+        "dismantled": {
+          "done": false,
+          "date": ""
+        },
+        "mofcomEntry": {
+          "done": true,
+          "ref": "xyz2017-5-6-1",
+          "date": "2017-05-05"
+        },
+        "policeSiteEntry": {
+          "done": true,
+          "date": "2017-05-05"
+        },
+        "mofcomCertReady": {
+          "done": false,
+          "date": "2017-05-05"
+        },
+        "mofcomCertCollectedByOwnerAndSigned": {
+          "done": false,
+          "date": "2017-05-05"
+        }
       }
     }
   ],
-  "types": {
+  "typesBackup": {
+    "surveyOrderTypes": [
+      {
+        "id": "1",
+        "name": "一次"
+      },
+      {
+        "id": "2",
+        "name": "二次"
+      }
+    ],
     "feesAndDeductionsTypes": [
-      {"id": "1", "name": "零件遗失"},
-      {"id": "2", "name": "拖车费"},
-      {"id": "3", "name": "其他"}
+      {
+        "id": "1",
+        "name": "零件遗失"
+      },
+      {
+        "id": "2",
+        "name": "拖车费"
+      },
+      {
+        "id": "3",
+        "name": "其他"
+      }
     ],
     "pIdTypes": [
-      {"id": "1", "name": "身份证"},
-      {"id": "2", "name": "其他"}
+      {
+        "id": "p1",
+        "name": "身份证"
+      },
+      {
+        "id": "p2",
+        "name": "其他"
+      }
     ],
     "oIdTypes": [
-      {"id": "1", "name": "组织机构代码证"},
-      {"id": "2", "name": "其他"}
-    ],    
-    "mofcomRegistryTypes": [
+      {
+        "id": "o1",
+        "name": "组织机构代码证"
+      },
+      {
+        "id": "o2",
+        "name": "其他"
+      }
+    ],
+    "mofcomRegisterTypes": [
       {
         "id": "1",
         "name": "正常"
       },
       {
-        "id": "2", "name": "异地"
+        "id": "2",
+        "name": "异地"
       },
       {
         "id": "3",
-        "name": "信息不全"
+        "name": "罚没"
       },
       {
         "id": "4",
+        "name": "信息不全"
+      }
+    ],
+    "vehicleTypes": [
+      {
+        "id": "1",
+        "name": "小型轿车"
+      },
+      {
+        "id": "2",
+        "name": "轻型厢式货车"
+      },
+      {
+        "id": "3",
+        "name": "二轮摩托车"
+      }
+    ],
+    "brands": [
+      {
+        "id": "1",
+        "name": "夏利"
+      },
+      {
+        "id": "2",
+        "name": "继科"
+      }
+    ],
+    "useCharacters": [
+      {
+        "id": "1",
+        "name": "非营运"
+      },
+      {
+        "id": "2",
+        "name": "出租客运"
+      }
+    ],
+    "fuelTypes": [
+      {
+        "id": "1",
+        "name": "汽油"
+      },
+      {
+        "id": "2",
+        "name": "柴油"
+      },
+      {
+        "id": "3",
+        "name": "燃气"
+      },
+      {
+        "id": "4",
+        "name": "其他"
+      }
+    ],
+    "aquisitionTypes": [
+      {
+        "id": "1",
+        "name": "购买"
+      },
+      {
+        "id": "2",
+        "name": "其他"
+      }
+    ],
+    "dismantlingOrderTypes": [
+      {
+        "id": "1",
+        "name": "正常"
+      },
+      {
+        "id": "2",
+        "name": "临时"
+      }
+    ]
+  },
+  "types": {
+    "surveyOrderTypes": [
+      {
+        "id": "1",
+        "name": "一次"
+      },
+      {
+        "id": "2",
+        "name": "二次"
+      }
+    ],
+    "feesAndDeductionsTypes": [
+      {
+        "id": "1",
+        "name": "零件遗失"
+      },
+      {
+        "id": "2",
+        "name": "拖车费"
+      },
+      {
+        "id": "3",
+        "name": "其他"
+      }
+    ],
+    "pIdTypes": [
+      {
+        "id": "p1",
+        "name": "身份证"
+      },
+      {
+        "id": "p2",
+        "name": "其他"
+      }
+    ],
+    "oIdTypes": [
+      {
+        "id": "o1",
+        "name": "组织机构代码证"
+      },
+      {
+        "id": "o2",
+        "name": "其他"
+      }
+    ],
+    "mofcomRegisterTypes": [
+      {
+        "id": "1",
+        "name": "正常"
+      },
+      {
+        "id": "2",
+        "name": "异地"
+      },
+      {
+        "id": "3",
         "name": "罚没"
+      },
+      {
+        "id": "4",
+        "name": "信息不全"
       }
     ],
     "vehicleTypes": [
@@ -324,27 +610,37 @@
       "tel": "13904210421"
     }
   ],
-  "users": [{
-    "id": "1",
-    "username": "baoshijie",
-    "password": "123",
-    "groupIds": ["1"]
-  }],
-  "groups": [{
-    "id": "1",
-    "groupname": "admin",
-    "memeberIds": ["1"]
-  }],
-  "dismantlingOrders": [{
-    "id": "1",
-    "vin": "ABCD12345678",
-    "orderType": {
+  "users": [
+    {
       "id": "1",
-      "name": "临时"
-    },
-    "orderDate": "2017-05-03",
-    "estimatedFinishDate": "2017-05-05",
-    "actualFinishDate": "2017-05-10",
-    "group": ""
-  }]
+      "username": "baoshijie",
+      "password": "123",
+      "groupIds": [
+        "1"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "groupname": "admin",
+      "memeberIds": [
+        "1"
+      ]
+    }
+  ],
+  "dismantlingOrders": [
+    {
+      "id": "1",
+      "vin": "ABCD12345678",
+      "orderType": {
+        "id": "1",
+        "name": "临时"
+      },
+      "orderDate": "2017-05-03",
+      "estimatedFinishDate": "2017-05-05",
+      "actualFinishDate": "2017-05-10",
+      "group": ""
+    }
+  ]
 }
