@@ -157,23 +157,23 @@
       "entranceDate": "2017-05-03",
       "remarks": [
         {
+          "content": "abc",
           "date": "2017-05-03",
-          "by": "longyun8",
-          "content": "abc"
+          "by": "longyun8"
         }
       ],
       "metadata": {
-        "createdAt": "",
-        "createdBy": "",
+        "isDeleted": false,
+        "deletedFor": "车主取消拆解",
         "deletedBy": "",
         "deletedAt": "",
-        "isDeleted": false,
-        "deletedFor": "车主取消拆解"
+        "createdAt": "",
+        "createdBy": ""
       },
       "owner": {
-        "isPerson": true,
-        "isRemote": false,
         "name": "车飞豹",
+        "address": "双塔区",
+        "zipCode": "122000",
         "idType": {
           "id": "p1",
           "name": "身份证"
@@ -181,8 +181,8 @@
         "idOtherTypeName": "",
         "idNo": "211302200001011230",
         "tel": "13804210421",
-        "address": "双塔区",
-        "zipCode": "122000",
+        "isPerson": true,
+        "isRemote": false,
         "isByAgent": true
       },
       "agent": {
@@ -201,32 +201,32 @@
           "id": "1",
           "name": "小型轿车"
         },
+        "useCharacter": {
+          "id": "1",
+          "name": "非营运"
+        },
         "brand": {
           "id": "2",
           "name": "继科"
         },
         "model": "xyz123",
-        "useCharacter": {
-          "id": "1",
-          "name": "非营运"
-        },
         "conditionOnEntrance": "完好，无氟，少量废油。",
         "residualValueBeforeFD": 500,
         "engineNo": "001123",
-        "color": "红/灰",
         "registrationDate": "2009-05-01",
-        "fuelType": {
-          "id": "1",
-          "name": "汽油"
-        },
+        "totalMassKG": 1450,
+        "lengthOverallMM": 4500,
+        "color": "红/灰",
         "aquisitionType": {
           "id": "1",
           "name": "购买"
         },
         "aquisitionOtherTypeDetail": "",
         "displacementL": 1,
-        "totalMassKG": 1450,
-        "lengthOverallMM": 4500,
+        "fuelType": {
+          "id": "1",
+          "name": "汽油"
+        },
         "seats": 5,
         "isNEV": false
       },
@@ -236,6 +236,7 @@
             "id": "2",
             "name": "拖车费"
           },
+          "part": null,
           "details": "起点：豪德",
           "amount": 100
         },
@@ -244,10 +245,8 @@
             "id": "1",
             "name": "零件遗失"
           },
-          "part": {
-            "id": "1",
-            "name": "电瓶"
-          },
+          "part": "电瓶",
+          "details": null,
           "amount": 100
         },
         {
@@ -255,6 +254,7 @@
             "id": "3",
             "name": "其他"
           },
+          "part": null,
           "details": "说明抵扣原因",
           "amount": 100
         }
@@ -291,12 +291,12 @@
         "vLicenseB": true,
         "plateCount": 2,
         "infoQueryForm": false,
-        "ownerPIdCopy": true,
         "ownerOIdCopy": false,
+        "ownerPIdCopy": true,
         "agentIdCopy": true,
-        "powerOfAttorney": false,
         "registrationTransferDeregistrationApplication": false,
         "surveyRecords": false,
+        "powerOfAttorney": false,
         "orgDeregistrationFormCopy": false,
         "orgRenamingDoc": false,
         "statementOfLossOnNewspaper": false,
@@ -325,6 +325,23 @@
           "done": false,
           "date": "2017-05-05"
         },
+        "policeSiteEntry": {
+          "done": true,
+          "date": "2017-05-05"
+        },
+        "mofcomEntry": {
+          "done": true,
+          "date": "2017-05-05",
+          "ref": "xyz2017-5-6-1"
+        },
+        "mofcomCertReady": {
+          "done": true,
+          "date": "2017-05-05"
+        },
+        "mofcomCertCollectedByOwnerAndSigned": {
+          "done": false,
+          "date": "2017-05-05"
+        },
         "firstSurvey": {
           "done": true,
           "date": "2017-05-05"
@@ -337,24 +354,9 @@
           "done": false,
           "date": ""
         },
-        "mofcomEntry": {
-          "done": true,
-          "ref": "xyz2017-5-6-1",
-          "date": "2017-05-05"
-        },
-        "policeSiteEntry": {
-          "done": true,
-          "date": "2017-05-05"
-        },
-        "mofcomCertReady": {
-          "done": false,
-          "date": "2017-05-05"
-        },
-        "mofcomCertCollectedByOwnerAndSigned": {
-          "done": false,
-          "date": "2017-05-05"
-        }
-      }
+        "remarks": []
+      },
+      "test": 2
     },
     {
       "id": "ABCD12345679",
