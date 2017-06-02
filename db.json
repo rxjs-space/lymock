@@ -15,7 +15,7 @@
       "owner": {
         "title": "所有人信息",
         "name": "所有人姓名/组织机构名称",
-        "address": "地址",
+        "address": "地址（县级）",
         "zipCode": "邮编",
         "idType": "所有人证件类型",
         "idOtherTypeName": "其他证件名称",
@@ -41,12 +41,12 @@
         "model": "型号",
         "engineNo": "发动机号码",
         "registrationDate": "注册日期",
-        "totalMassKG": "总质量(KG)",
-        "lengthOverallMM": "外廓长度(MM)",
+        "totalMassKG": "总质量（KG）",
+        "lengthOverallMM": "外廓长度（MM）",
         "color": "车身颜色",
         "aquisitionType": "车辆获得方式",
         "aquisitionOtherTypeDetail": "车辆获得方式明细",
-        "displacementL": "排量(L)",
+        "displacementL": "排量（L）",
         "fuelType": "燃油种类",
         "seats": "核定载人数",
         "isNEV": "是否新能源",
@@ -79,7 +79,14 @@
         "type": "费抵类别",
         "id": "费抵编号",
         "partName": "零件名称",
-        "othersDetails": "详情",
+        "details": "详情",
+        "amount": "金额（元）"
+      },
+      "vehicleCosts": {
+        "title": "车辆回收成本",
+        "type": "成本类别",
+        "id": "项目编号",
+        "details": "详情",
         "amount": "金额（元）"
       },
       "status": {
@@ -173,7 +180,7 @@
         "idOtherTypeName": "",
         "idNo": "211302200001011230",
         "tel": "13804210421",
-        "address": "朝阳市",
+        "address": "双塔区",
         "zipCode": "122000",
         "isByAgent": true
       },
@@ -248,6 +255,32 @@
             "name": "其他"
           },
           "details": "说明抵扣原因",
+          "amount": 100
+        }
+      ],
+      "vehicleCosts": [
+        {
+          "type": {
+            "id": "1",
+            "name": "车辆抵扣后残值"
+          },
+          "details": "",
+          "amount": 0
+        },
+        {
+          "type": {
+            "id": "2",
+            "name": "回收人员工时费"
+          },
+          "details": "",
+          "amount": 0
+        },
+        {
+          "type": {
+            "id": "3",
+            "name": "其他成本"
+          },
+          "details": "asdfjk;lasdfk;klj",
           "amount": 100
         }
       ],
@@ -460,6 +493,12 @@
     ]
   },
   "types": {
+    "vehicleCosts": [
+      {"id": "1", "name": "车辆抵扣后残值"},
+      {"id": "2", "name": "回收人员工时费"},
+      {"id": "3", "name": "拖车费（未抵扣）"},
+      {"id": "4", "name": "其他成本"}
+    ],
     "surveyOrderTypes": [
       {
         "id": "1",
@@ -544,6 +583,14 @@
       {
         "id": "2",
         "name": "继科"
+      },
+      {
+        "id": 3,
+        "name": "桑塔纳"
+      },
+      {
+        "id": 4,
+        "name": "长安"
       }
     ],
     "useCharacters": [
