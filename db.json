@@ -6,7 +6,7 @@
     },
     "vehicles": {
       "id": "车辆识别代号（VIN）",
-      "idConfirm": "车辆识别代号确认",
+      "idConfirm": "VIN 确认",
       "mofcomRegisterType": "商务部登记类别",
       "mofcomRegisterRef": "商务部登记编号",
       "entranceDate": "进场日期",
@@ -333,8 +333,7 @@
         },
         "mofcomEntry": {
           "done": true,
-          "date": "2017-06-02",
-          "ref": "xyz2017-5-6-1"
+          "date": "2017-06-02"
         },
         "mofcomCertReady": {
           "done": true,
@@ -458,8 +457,8 @@
             "name": "零件遗失"
           },
           "part": {
-            "id": "1",
-            "name": "电瓶"
+            "id": "p183",
+            "name": "蓄电池"
           },
           "amount": 100
         },
@@ -552,7 +551,6 @@
         },
         "mofcomEntry": {
           "done": true,
-          "ref": "xyz2017-5-6-1",
           "date": "2017-05-05"
         },
         "policeSiteEntry": {
@@ -707,6 +705,13 @@
     ]
   },
   "types": {
+    "parts": [
+      {"id": "p001", "name": "左前门"},
+      {"id": "p183", "name": "蓄电池"}
+    ],
+    "wastes": [
+      {"id": "w001", "name": "废铁"}
+    ],
     "vehicleCostTypes": [
       {
         "id": "2",
